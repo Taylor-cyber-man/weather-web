@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多城市天气预报</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>天气预报</h1>
+            <p></p>
+        </header>
+        
+        <div class="app-container">
+            <!-- 城市选择区域 -->
+            <section class="city-selection">
+                <h2 class="section-title">
+                    <i>📍</i>
+                    <span data-translate="城市选择">城市选择</span>
+                </h2>
+                <div id="city-list"></div>
+                <div id="city-error"></div>
+            </section>
+            
+            <!-- 天气卡片区域 -->
+            <section class="weather-card-container">
+                <div class="weather-header">
+                    <h2 id="city-name" data-translate="请选择城市">请选择城市</h2>
+                    <div class="date-info" id="current-date">2025年6月12日 星期四</div>
+                </div>
+                
+                <div class="weather-tabs">
+                    <div class="weather-tab active" data-tab="current">当前天气</div>
+                    <div class="weather-tab" data-tab="forecast">3天预报</div>
+                </div>
+                
+                <div id="weather-loading">
+                    <div class="loader"></div>
+                </div>
+                
+                <div id="weather-error"></div>
+                
+                <!-- 当前天气内容 -->
+                <div id="current-weather">
+                    <div class="weather-overview">
+                        <div class="weather-emoji" id="weather-emoji">☀️</div>
+                        <div class="temperature-container">
+                            <div class="temperature-value" id="temperature">--</div>
+                            <div class="temperature-label" id="description">晴天</div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-details">
+                        <div class="detail-card">
+                            <div class="detail-label" data-translate="湿度">湿度</div>
+                            <div class="detail-value" id="humidity">--%</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label" data-translate="风速">风速</div>
+                            <div class="detail-value" id="wind">--级</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label" data-translate="风向">风向</div>
+                            <div class="detail-value" id="wind-direction">--</div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-suggestion">
+                        <div class="activity-emoji" id="activity-emoji">👋</div>
+                        <div class="activity-text" id="activity-text">请选择一个城市查看天气信息</div>
+                    </div>
+                </div>
+                
+                <!-- 预报天气内容 -->
+                <div id="forecast-weather">
+                    <div class="forecast-list" id="forecast-list">
+                        <!-- 预报项目将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
